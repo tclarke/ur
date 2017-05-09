@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Royal Game of Ur</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div class="alert" :class="{ hidden: !hasError, 'alert-warning': !!hasError }" role="alert">{{ errorMessage }}</div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1 col-md-offset-4">
+            <button id="black-in" style="background: transparent"  @click="processClick" class="btn btn-default" :disabled="!isBlack">
+            <img style="width: 70%" class="img-responsive img-circle center-block" src="images/black_piece.jpg"/>
+            <span class="badge">{{ boardState.in.black }}</span>
+            </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"><img class="img-responsive img-rounded tile" src="images/conversion.png"/>
+        <img @click="processClick" id="b5" class="img-responsive img-circle board-piece" :src="tileImageB5"/></div>
+
+        <div class="col-md-1"><img class="img-responsive img-rounded tile" src="images/rosette.png"/>
+        <img @click="processClick" id="b6" class="img-responsive img-circle board-piece" :src="tileImageB6"/></div>
+
+        <div class="col-md-1">
+            <button id="black-out" style="background: transparent"  class="btn btn-default" disabled="true">
+            <img style="width: 70%" class="img-responsive img-circle center-block" src="images/black_piece.jpg"/>
+            <span class="badge">{{ boardState.out.black }}</span>
+            </button>
+        </div>
+
+        <div class="col-md-1 col-md-offset-1"><img class="img-responsive img-rounded tile" src="images/4eyes.png"/>
+        <img @click="processClick" id="b1" class="img-responsive img-circle board-piece" :src="tileImageB1"/></div>
+
+        <div class="col-md-1"><img class="img-responsive img-rounded tile" src="images/5holes.png"/>
+        <img @click="processClick" id="b2" class="img-responsive img-circle board-piece" :src="tileImageB2"/></div>
+
+        <div class="col-md-1"><img class="img-responsive img-rounded tile" src="images/4eyes.png"/>
+        <img @click="processClick" id="b3" class="img-responsive img-circle board-piece" :src="tileImageB3"/></div>
+
+        <div class="col-md-1"><img class="img-responsive img-rounded tile" src="images/rosette.png"/>
+        <img @click="processClick" id="b4" class="img-responsive img-circle board-piece" :src="tileImageB4"/></div>
+
+      </div>
+      <div class="row">
+        <div class="col-md-1"><img class="img-responsive img-rounded tile" src="images/5holes.png"/>
+        <img @click="processClick" id="c8" class="img-responsive img-circle board-piece" :src="tileImageC8"/></div>
+
+        <div class="col-md-1"><img class="img-responsive img-rounded tile" src="images/4eyes.png"/>
+        <img @click="processClick" id="c7" class="img-responsive img-circle board-piece" :src="tileImageC7"/></div>
+
+        <div class="col-md-1"><img class="img-responsive img-rounded tile" src="images/passage.png"/>
+        <img @click="processClick" id="c6" class="img-responsive img-circle board-piece" :src="tileImageC6"/></div>
+
+        <div class="col-md-1"><img class="img-responsive img-rounded tile" src="images/5holes.png"/>
+        <img @click="processClick" id="c5" class="img-responsive img-circle board-piece" :src="tileImageC5"/></div>
+
+        <div class="col-md-1"><img class="img-responsive img-rounded tile" src="images/rosette.png"/>
+        <img @click="processClick" id="c4" class="img-responsive img-circle board-piece" :src="tileImageC4"/></div>
+
+        <div class="col-md-1"><img class="img-responsive img-rounded tile" src="images/passage.png"/>
+        <img @click="processClick" id="c3" class="img-responsive img-circle board-piece" :src="tileImageC3"/></div>
+
+        <div class="col-md-1"><img class="img-responsive img-rounded tile" src="images/5holes.png"/>
+        <img @click="processClick" id="c2" class="img-responsive img-circle board-piece" :src="tileImageC2"/></div>
+
+        <div class="col-md-1"><img class="img-responsive img-rounded tile" src="images/4squares.png"/>
+        <img @click="processClick" id="c1" class="img-responsive img-circle board-piece" :src="tileImageC1"/></div>
+
+      </div>
+      <div class="row">
+        <div class="col-md-1"><img class="img-responsive img-rounded tile" src="images/conversion.png"/>
+        <img @click="processClick" id="w5" class="img-responsive img-circle board-piece" :src="tileImageW5"/></div>
+
+        <div class="col-md-1"><img class="img-responsive img-rounded tile" src="images/rosette.png"/>
+        <img @click="processClick" id="w6" class="img-responsive img-circle board-piece" :src="tileImageW6"/></div>
+
+        <div class="col-md-1">
+            <button id="white-out" style="background: transparent"  class="btn btn-default" disabled="true">
+            <img style="width: 70%" class="img-responsive img-circle center-block" src="images/white_piece.jpg"/>
+            <span class="badge">{{ boardState.out.white }}</span>
+            </button>
+        </div>
+
+        <div class="col-md-1 col-md-offset-1"><img class="img-responsive img-rounded tile" src="images/4eyes.png"/>
+        <img @click="processClick" id="w1" class="img-responsive img-circle board-piece" :src="tileImageW1"/></div>
+
+        <div class="col-md-1"><img class="img-responsive img-rounded tile" src="images/5holes.png"/>
+        <img @click="processClick" id="w2" class="img-responsive img-circle board-piece" :src="tileImageW2"/></div>
+
+        <div class="col-md-1"><img class="img-responsive img-rounded tile" src="images/4eyes.png"/>
+        <img @click="processClick" id="w3" class="img-responsive img-circle board-piece" :src="tileImageW3"/></div>
+
+        <div class="col-md-1"><img class="img-responsive img-rounded tile" src="images/rosette.png"/>
+        <img @click="processClick" id="w4" class="img-responsive img-circle board-piece" :src="tileImageW4"/></div>
+
+      </div>
+      <div class="row">
+        <div class="col-md-1 col-md-offset-4">
+            <button id="white-in" style="background: transparent"  @click="processClick" class="btn btn-default" :disabled="!isWhite">
+            <img style="width: 70%" class="img-responsive img-circle center-block" src="images/white_piece.jpg"/>
+            <span class="badge">{{ boardState.in.white }}</span>
+            </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-1">{{ sideDisplay }}'s move</div>
+        <div class="col-md-1 col-md-offset-1">
+            <button :disabled="currentRoll >= 0" class="btn btn-primary" type="button" @click="rollDice">
+                Roll Dice <span v-show="currentRoll >= 0" class="badge">{{ currentRoll }}</span>
+            </button>
+      </div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
