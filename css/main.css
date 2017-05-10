@@ -2,15 +2,21 @@
     background-color: #966F33;
     border-style: solid;
     border-width: 1px;
+    max-width: 100%;
+}
+.in-out {
+    background: transparent;
+    max-width: 100%;
 }
 body {
     background-color: #888888;
+    min-width: 600px;
 }
 .row {
     padding-top: 5px;
     padding-bottom: 5px;
 }
-.col-md-1 {
+.col-md-1 .col-sm-1 .col-xs-1 {
     padding-left: 5px;
     padding-right: 5px;
 }
@@ -18,5 +24,7 @@ body {
     position: absolute;
     top: 10px;
     left: 15px;
-    width: 70%;
+    min-width: 10px;
+    width: 50%;
+    max-width: 50px;
 }
