@@ -15,7 +15,7 @@
   <div id="app">
     <div class="container">
       <div class="row">
-        <div class="col-sm-1 col-sm-offset-4">
+        <div class="col-xs-1 col-xs-offset-4">
             <button id="black-in" @click="processClick" class="btn in-out" :class="{ 'btn-default': !isBlack, 'btn-primary': isBlack }" :disabled="!isBlack">
             <img style="width: 70%" class="img-responsive img-circle center-block" src="images/black_piece.jpg"/>
             <span class="badge">{{ boardState.in.black }}</span>
@@ -23,87 +23,87 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-1"><img class="img-responsive img-rounded tile" src="images/conversion.png"/>
+        <div class="col-xs-1"><img class="img-responsive img-rounded tile" src="images/conversion.png"/>
         <img @click="processClick" id="b5" class="img-responsive img-circle board-piece" :src="tileImageB5"/></div>
 
-        <div class="col-sm-1"><img class="img-responsive img-rounded tile" src="images/rosette.png"/>
+        <div class="col-xs-1"><img class="img-responsive img-rounded tile" src="images/rosette.png"/>
         <img @click="processClick" id="b6" class="img-responsive img-circle board-piece" :src="tileImageB6"/></div>
 
-        <div class="col-sm-1">
+        <div class="col-xs-1">
             <button id="black-out" class="btn btn-default in-out" disabled="true">
             <img style="width: 70%" class="img-responsive img-circle center-block" src="images/black_piece.jpg"/>
             <span class="badge">{{ boardState.out.black }}</span>
             </button>
         </div>
 
-        <div class="col-sm-1 col-sm-offset-1"><img class="img-responsive img-rounded tile" src="images/4eyes.png"/>
+        <div class="col-xs-1 col-xs-offset-1"><img class="img-responsive img-rounded tile" src="images/4eyes.png"/>
         <img @click="processClick" id="b1" class="img-responsive img-circle board-piece" :src="tileImageB1"/></div>
 
-        <div class="col-sm-1"><img class="img-responsive img-rounded tile" src="images/5holes.png"/>
+        <div class="col-xs-1"><img class="img-responsive img-rounded tile" src="images/5holes.png"/>
         <img @click="processClick" id="b2" class="img-responsive img-circle board-piece" :src="tileImageB2"/></div>
 
-        <div class="col-sm-1"><img class="img-responsive img-rounded tile" src="images/4eyes.png"/>
+        <div class="col-xs-1"><img class="img-responsive img-rounded tile" src="images/4eyes.png"/>
         <img @click="processClick" id="b3" class="img-responsive img-circle board-piece" :src="tileImageB3"/></div>
 
-        <div class="col-sm-1"><img class="img-responsive img-rounded tile" src="images/rosette.png"/>
+        <div class="col-xs-1"><img class="img-responsive img-rounded tile" src="images/rosette.png"/>
         <img @click="processClick" id="b4" class="img-responsive img-circle board-piece" :src="tileImageB4"/></div>
 
       </div>
       <div class="row">
-        <div class="col-sm-1"><img class="img-responsive img-rounded tile" src="images/5holes.png"/>
+        <div class="col-xs-1"><img class="img-responsive img-rounded tile" src="images/5holes.png"/>
         <img @click="processClick" id="c8" class="img-responsive img-circle board-piece" :src="tileImageC8"/></div>
 
-        <div class="col-sm-1"><img class="img-responsive img-rounded tile" src="images/4eyes.png"/>
+        <div class="col-xs-1"><img class="img-responsive img-rounded tile" src="images/4eyes.png"/>
         <img @click="processClick" id="c7" class="img-responsive img-circle board-piece" :src="tileImageC7"/></div>
 
-        <div class="col-sm-1"><img class="img-responsive img-rounded tile" src="images/passage.png"/>
+        <div class="col-xs-1"><img class="img-responsive img-rounded tile" src="images/passage.png"/>
         <img @click="processClick" id="c6" class="img-responsive img-circle board-piece" :src="tileImageC6"/></div>
 
-        <div class="col-sm-1"><img class="img-responsive img-rounded tile" src="images/5holes.png"/>
+        <div class="col-xs-1"><img class="img-responsive img-rounded tile" src="images/5holes.png"/>
         <img @click="processClick" id="c5" class="img-responsive img-circle board-piece" :src="tileImageC5"/></div>
 
-        <div class="col-sm-1"><img class="img-responsive img-rounded tile" src="images/rosette.png"/>
+        <div class="col-xs-1"><img class="img-responsive img-rounded tile" src="images/rosette.png"/>
         <img @click="processClick" id="c4" class="img-responsive img-circle board-piece" :src="tileImageC4"/></div>
 
-        <div class="col-sm-1"><img class="img-responsive img-rounded tile" src="images/passage.png"/>
+        <div class="col-xs-1"><img class="img-responsive img-rounded tile" src="images/passage.png"/>
         <img @click="processClick" id="c3" class="img-responsive img-circle board-piece" :src="tileImageC3"/></div>
 
-        <div class="col-sm-1"><img class="img-responsive img-rounded tile" src="images/5holes.png"/>
+        <div class="col-xs-1"><img class="img-responsive img-rounded tile" src="images/5holes.png"/>
         <img @click="processClick" id="c2" class="img-responsive img-circle board-piece" :src="tileImageC2"/></div>
 
-        <div class="col-sm-1"><img class="img-responsive img-rounded tile" src="images/4squares.png"/>
+        <div class="col-xs-1"><img class="img-responsive img-rounded tile" src="images/4squares.png"/>
         <img @click="processClick" id="c1" class="img-responsive img-circle board-piece" :src="tileImageC1"/></div>
 
       </div>
       <div class="row">
-        <div class="col-sm-1"><img class="img-responsive img-rounded tile" src="images/conversion.png"/>
+        <div class="col-xs-1"><img class="img-responsive img-rounded tile" src="images/conversion.png"/>
         <img @click="processClick" id="w5" class="img-responsive img-circle board-piece" :src="tileImageW5"/></div>
 
-        <div class="col-sm-1"><img class="img-responsive img-rounded tile" src="images/rosette.png"/>
+        <div class="col-xs-1"><img class="img-responsive img-rounded tile" src="images/rosette.png"/>
         <img @click="processClick" id="w6" class="img-responsive img-circle board-piece" :src="tileImageW6"/></div>
 
-        <div class="col-sm-1">
+        <div class="col-xs-1">
             <button id="white-out" class="btn btn-default in-out" disabled="true">
             <img style="width: 70%" class="img-responsive img-circle center-block" src="images/white_piece.jpg"/>
             <span class="badge">{{ boardState.out.white }}</span>
             </button>
         </div>
 
-        <div class="col-sm-1 col-sm-offset-1"><img class="img-responsive img-rounded tile" src="images/4eyes.png"/>
+        <div class="col-xs-1 col-xs-offset-1"><img class="img-responsive img-rounded tile" src="images/4eyes.png"/>
         <img @click="processClick" id="w1" class="img-responsive img-circle board-piece" :src="tileImageW1"/></div>
 
-        <div class="col-sm-1"><img class="img-responsive img-rounded tile" src="images/5holes.png"/>
+        <div class="col-xs-1"><img class="img-responsive img-rounded tile" src="images/5holes.png"/>
         <img @click="processClick" id="w2" class="img-responsive img-circle board-piece" :src="tileImageW2"/></div>
 
-        <div class="col-sm-1"><img class="img-responsive img-rounded tile" src="images/4eyes.png"/>
+        <div class="col-xs-1"><img class="img-responsive img-rounded tile" src="images/4eyes.png"/>
         <img @click="processClick" id="w3" class="img-responsive img-circle board-piece" :src="tileImageW3"/></div>
 
-        <div class="col-sm-1"><img class="img-responsive img-rounded tile" src="images/rosette.png"/>
+        <div class="col-xs-1"><img class="img-responsive img-rounded tile" src="images/rosette.png"/>
         <img @click="processClick" id="w4" class="img-responsive img-circle board-piece" :src="tileImageW4"/></div>
 
       </div>
       <div class="row">
-        <div class="col-sm-1 col-sm-offset-4">
+        <div class="col-xs-1 col-xs-offset-4">
             <button id="white-in" @click="processClick" class="btn in-out" :class="{ 'btn-default': !isWhite, 'btn-primary': isWhite }" :disabled="!isWhite">
             <img style="width: 70%" class="img-responsive img-circle center-block" src="images/white_piece.jpg"/>
             <span class="badge">{{ boardState.in.white }}</span>
@@ -111,8 +111,8 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-1">{{ sideDisplay }}'s move</div>
-        <div class="col-sm-1 col-sm-offset-1">
+        <div class="col-xs-1">{{ sideDisplay }}'s move</div>
+        <div class="col-xs-1 col-xs-offset-1">
             <button :disabled="currentRoll >= 0" class="btn btn-primary" type="button" @click="rollDice">
                 Roll Dice <span v-show="currentRoll >= 0" class="badge">{{ currentRoll }}</span>
             </button>
