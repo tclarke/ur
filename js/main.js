@@ -178,7 +178,29 @@ new Vue({
     currentRoll: -1,
     side: PieceEnum.BLACK,
     errorMessage: "",
-    boardState: new Ur()
+    boardState: new Ur(),
+    rtc: new SimpleWebRTC({
+        localVideoEl: "",
+        remoteVideoEl: "",
+        autoRequestMedia: false,
+        receiveMedia: {
+            mandatory: {
+                OfferToReceiveAudio: false,
+                OfferToReceiveVideo: false
+            }
+        }
+    })
+  },
+  created: function () {
+      this.rtc.on('createdPeer', function (peer) {
+          console.log('createdPeer', peer);
+      };
+      this.rtc.on('iceFailed', function (peer) {
+          alert("Connection failed");
+      };
+      this.rtc.on('connectivityError', function (peer) {
+          alert("Connection failed");
+      };
   },
   computed: {
       sideDisplay: function() {
